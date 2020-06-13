@@ -2,13 +2,18 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { WelcomeScreen } from "./app/screens/WelcomeScreen";
 import { ViewImageScreen } from "./app/screens/ViewImageScreen";
+import { Card } from "./app/screens/Card";
+import { ListingDetails } from "./app/screens/ListingDetails";
 import AppButton from "./app/components/AppButton";
 import { THEME } from "./app/theme";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <WelcomeScreen />
+      <>
+        <Card />
+        <ListingDetails />
+      </>
     </View>
   );
 }
