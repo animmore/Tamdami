@@ -6,6 +6,7 @@ export const THEME = {
   LIGHT_BLUE: "#b4ceff",
   BLACK: "#000",
   WHITE: "#fff",
+  GREY: "#6e6969",
 
   //OTHER
 

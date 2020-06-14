@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { WelcomeScreen } from "./app/screens/WelcomeScreen";
 import { ViewImageScreen } from "./app/screens/ViewImageScreen";
 import { Card } from "./app/screens/Card";
-import { ListingDetails } from "./app/screens/ListingDetails";
+import { ListItem } from "./app/screens/ListItem";
 import AppButton from "./app/components/AppButton";
 import { THEME } from "./app/theme";
 
@@ -12,7 +12,7 @@ export default function App() {
     <View style={styles.container}>
       <>
         <Card />
-        <ListingDetails />
+        <ListItem />
       </>
     </View>
   );

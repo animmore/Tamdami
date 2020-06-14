@@ -1,30 +1,38 @@
 import React from "react";
-import { Button } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { THEME } from "../../theme";
 
-import { styles } from "./styles";
-
 export default function AppButton({
-  children,
+  title,
   style,
   onPress,
-  color,
-  mode = "contained",
   isDisabled,
-  labelStyle,
-  // color = THEME.MAIN_PEACH,
+  color = THEME.MAIN_PEACH,
 }) {
   return (
-    <Button
-      style={{ ...styles.appBtn, ...style }}
-      color={color}
+    <TouchableOpacity
+      style={{ ...styles.appBtn, ...style, backgroundColor: color }}
       onPress={onPress}
-      mode={mode}
       disabled={isDisabled}
-      title={children}
-      labelStyle={{ ...styles.appBtnTitle, ...labelStyle }}
     >
-      {children}
-    </Button>
+      <Text style={{ ...styles.text, ...style }}>{title}</Text>
+    </TouchableOpacity>
   );
 }
+
+export const styles = StyleSheet.create({
+  appBtn: {
+    width: "90%",
+    height: THEME.DEVICE_WINDOW_HEIGHT * 0.06,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 25,
+    marginVertical: 10,
+  },
+  text: {
+    fontSize: 18,
+    color: THEME.WHITE,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+  },
+});
