@@ -7,6 +7,8 @@ export const THEME = {
   BLACK: "#000",
   WHITE: "#fff",
   GREY: "#6e6969",
+  LIGHT_GREY: "#f8f4f4",
+  DANGER: "#FF5252",
 
   //OTHER
 

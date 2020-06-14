@@ -1,34 +1,36 @@
-import React from "react";
-import {
-  StyleSheet,
-  FlatList,
-  SafeAreaView,
-  Platform,
-  StatusBar,
-} from "react-native";
-import { ListItem } from "./ListItem";
+import React, { useState } from "react";
+import { StyleSheet, FlatList, View } from "react-native";
+import { ListItem } from "../components/ListItem";
+import { Screen } from "../components/Screen";
 import Constants from "expo-constants";
+import { THEME } from "../theme";
+import { ListItemSeparator } from "../components/ListItemSeparator";
+import { ListItemDeleteAction } from "../components/ListItemDeleteAction";
 
-console.log(Constants);
+const initialMessages = [
+  {
+    id: Math.random() * Math.random() * Math.random(),
+    title: "T1",
+    subTitle: "D1",
+    image: require("../assets/mosh.jpg"),
+  },
+  {
+    id: Math.random() * Math.random() * Math.random(),
+    title: "T2",
+    subTitle: "D2",
+    image: require("../assets/mosh.jpg"),
+  },
+];
 
 export function MessageScreen() {
-  const messages = [
-    {
-      id: Math.random() * Math.random() * Math.random(),
-      title: "T1",
-      subTitle: "D1",
-      image: require("../assets/mosh.jpg"),
-    },
-    {
-      id: Math.random() * Math.random() * Math.random(),
-      title: "T2",
-      subTitle: "D2",
-      image: require("../assets/mosh.jpg"),
-    },
-  ];
+  const [messages, setMessages] = useState(initialMessages);
+
+  const handleDeleteMessage = (message) => {
+    setMessages(messages.filter((m) => m.id !== message.id));
+  };
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <Screen>
       <FlatList
         data={messages}
         keyExtractor={(message) => `${message.id}`}
@@ -37,15 +39,20 @@ export function MessageScreen() {
             title={item.title}
             subTitle={item.subTitle}
             image={item.image}
+            onPress={() => {}}
+            renderRightActions={() => (
+              <ListItemDeleteAction
+                onPress={() => {
+                  handleDeleteMessage(item);
+                }}
+              />
+            )}
           />
         )}
+        ItemSeparatorComponent={ListItemSeparator}
       />
-    </SafeAreaView>
+    </Screen>
   );
 }
 
-const styles = StyleSheet.create({
-  screen: {
-    paddingTop: Constants.statusBarHeight,
-  },
-});
+const styles = StyleSheet.create({});

@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
-import { THEME } from "../../theme";
+import { THEME } from "../theme";
 
-export default function AppButton({
+export function AppButton({
   title,
   style,
   onPress,
