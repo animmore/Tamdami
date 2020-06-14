@@ -4,6 +4,7 @@ import { WelcomeScreen } from "./app/screens/WelcomeScreen";
 import { ViewImageScreen } from "./app/screens/ViewImageScreen";
 import { Card } from "./app/screens/Card";
 import { ListItem } from "./app/screens/ListItem";
+import { MessageScreen } from "./app/screens/MessageScreen";
 import AppButton from "./app/components/AppButton";
 import { THEME } from "./app/theme";
 
@@ -11,7 +12,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <>
-        <ViewImageScreen />
+        <MessageScreen />
       </>
     </View>
   );

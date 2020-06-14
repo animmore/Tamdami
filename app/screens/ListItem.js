@@ -5,15 +5,15 @@ import { THEME } from "../theme";
 
 export function ListItem({
   image = require("../assets/mosh.jpg"),
-  user,
+  title,
   subTitle,
 }) {
   return (
     <View style={styles.container}>
       <Image source={image} style={styles.image} />
       <View style={styles.infoContainer}>
-        <AppText style={styles.infoName}>John Doe</AppText>
-        <AppText style={styles.subTitle}>5 Listings</AppText>
+        <AppText style={styles.infoName}> {title} </AppText>
+        <AppText style={styles.subTitle}> {subTitle} </AppText>
       </View>
     </View>
   );
