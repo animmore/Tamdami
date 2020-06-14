@@ -11,8 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <>
-        <Card />
-        <ListItem />
+        <ViewImageScreen />
       </>
     </View>
   );
