@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: THEME.DEVICE_SCREEN_WIDTH * 0.07,
     padding: 10,
+    backgroundColor: THEME.WHITE,
   },
   image: {
     borderRadius: 50,
