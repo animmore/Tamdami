@@ -7,11 +7,13 @@ import { MessageScreen } from "./app/screens/MessageScreen";
 import { AppButton } from "./app/components/AppButton";
 import { THEME } from "./app/theme";
 import { MyAccountScreen } from "./app/screens/MyAccountScreen";
+import { Icon } from "./app/components/Icon";
+import { Screen } from "./app/components/Screen";
 
 export default function App() {
   return (
-    <>
-      <MyAccountScreen />
-    </>
+    <Screen>
+      <Icon name={"email"} size={50} />
+    </Screen>
   );
 }
