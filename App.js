@@ -6,11 +6,12 @@ import { ListItem } from "./app/components/ListItem";
 import { MessageScreen } from "./app/screens/MessageScreen";
 import { AppButton } from "./app/components/AppButton";
 import { THEME } from "./app/theme";
+import { MyAccountScreen } from "./app/screens/MyAccountScreen";
 
 export default function App() {
   return (
     <>
-      <MessageScreen />
+      <MyAccountScreen />
     </>
   );
 }
