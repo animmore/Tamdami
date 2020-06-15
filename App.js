@@ -13,7 +13,7 @@ import { Screen } from "./app/components/Screen";
 export default function App() {
   return (
     <Screen>
-      <Icon name={"email"} size={50} />
+      <ListItem title="My title" ImageComponent={<Icon name={"email"} />} />
     </Screen>
   );
 }

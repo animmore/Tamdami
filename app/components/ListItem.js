@@ -11,7 +11,9 @@ import { THEME } from "../theme";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 export function ListItem({
-  image = require("../assets/mosh.jpg"),
+  // image = require("../assets/mosh.jpg"),
+  image,
+  ImageComponent,
   title,
   subTitle,
   onPress,
@@ -21,10 +23,13 @@ export function ListItem({
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={THEME.LIGHT_GREY} onPress={onPress}>
         <View style={styles.container}>
-          <Image source={image} style={styles.image} />
+          {ImageComponent}
+          {image && <Image source={image} style={styles.image} />}
           <View style={styles.infoContainer}>
             <AppText style={styles.infoName}> {title} </AppText>
-            <AppText style={styles.subTitle}> {subTitle} </AppText>
+            {subTitle && (
+              <AppText style={styles.subTitle}> {subTitle} </AppText>
+            )}
           </View>
         </View>
       </TouchableHighlight>
@@ -45,6 +50,7 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     marginHorizontal: 10,
+    justifyContent: "center",
   },
   infoName: {
     fontWeight: "400",
