@@ -10,6 +10,7 @@ export const THEME = {
   LIGHT_GREY: "#f8f4f4",
   DANGER: "#FF5252",
   YELLOW: "#ffe66d",
+  DARK: "#0c0c0c",
 
   //OTHER
 
