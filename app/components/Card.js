@@ -12,8 +12,8 @@ export function Card({
     <View style={styles.cardContainer}>
       <Image source={image} style={{ ...styles.imageCard }} />
       <View style={styles.infoContainter}>
-        <AppText style={styles.title}>Жакет на продажу!</AppText>
-        <AppText style={styles.subTitle}>$125</AppText>
+        <AppText style={styles.title}>{title}</AppText>
+        <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
     </View>
   );
@@ -26,12 +26,16 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 15,
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
+    overflow: "hidden",
+    width: "100%",
   },
   imageCard: {
     width: THEME.DEVICE_WINDOW_WIDTH * 0.9,
     height: THEME.DEVICE_WINDOW_HEIGHT * 0.22,
-    borderTopRightRadius: 15,
-    borderTopLeftRadius: 15,
+    // borderTopRightRadius: 15,
+    // borderTopLeftRadius: 15,
+
+    width: "100%",
   },
   infoContainter: {
     padding: 15,
