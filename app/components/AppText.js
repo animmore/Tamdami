@@ -1,13 +1,8 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
 import { THEME } from "../theme";
+import defaultStyles from "../styles";
 
 export function AppText({ children, style }) {
-  return <Text style={{ ...styles.text, ...style }}>{children}</Text>;
+  return <Text style={[defaultStyles, style]}>{children}</Text>;
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 18,
-  },
-});
