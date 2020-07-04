@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AppText } from "./AppText";
 
-export function ErrorMessage({ error }) {
-  if (!error) {
+export function ErrorMessage({ error, visible }) {
+  if (!error || !visible) {
     return null;
   }
 
