@@ -18,6 +18,30 @@ const validationSchema = Yup.object().shape({
 });
 
 export function LoginScreen() {
+  const fields = (
+    <>
+      <AppFormField
+        icon="email"
+        autoCapitalize="none"
+        placeholder="Email"
+        autoCorrect={false}
+        keyboardType="email-address"
+        textContentType="emailAddress"
+        name="email"
+      />
+
+      <AppFormField
+        icon="lock"
+        autoCapitalize="none"
+        placeholder="Password"
+        textContentType="password"
+        secureTextEntry={true}
+        name="password"
+      />
+
+      <SubmitButton title="Login" />
+    </>
+  );
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
@@ -29,28 +53,8 @@ export function LoginScreen() {
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
-      >
-        <AppFormField
-          icon="email"
-          autoCapitalize="none"
-          placeholder="Email"
-          autoCorrect={false}
-          keyboardType="email-address"
-          textContentType="emailAddress"
-          name="email"
-        />
-
-        <AppFormField
-          icon="lock"
-          autoCapitalize="none"
-          placeholder="Password"
-          textContentType="password"
-          secureTextEntry={true}
-          name="password"
-        />
-
-        <SubmitButton title="Login" />
-      </AppForm>
+        childrem={fields}
+      ></AppForm>
     </Screen>
   );
 }
