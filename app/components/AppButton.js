@@ -9,7 +9,7 @@ export function AppButton({ title, style, onPress, isDisabled, color = THEME.MAI
       onPress={onPress}
       disabled={isDisabled}
     >
-      <Text style={{ ...styles.text, ...style }}>{title}</Text>
+      <Text style={{ ...styles.title, ...style }}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     borderRadius: 25,
     marginVertical: 10,
   },
-  text: {
+  title: {
     fontSize: 18,
     color: THEME.WHITE,
     fontWeight: "bold",

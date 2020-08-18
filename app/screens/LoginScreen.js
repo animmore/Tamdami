@@ -48,7 +48,7 @@ export function LoginScreen() {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
         childrem={fields}
-      ></AppForm>
+      />
     </Screen>
   );
 }

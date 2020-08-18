@@ -10,7 +10,7 @@ export function AppTextInput({ icon, ...otherProps }) {
       {icon && (
         <MaterialCommunityIcons name={icon} size={20} color={THEME.GREY} style={styles.icon} />
       )}
-      <TextInput style={defaultStyles.text} {...otherProps} />
+      <TextInput style={defaultStyles.myText} {...otherProps} />
     </View>
   );
 }
