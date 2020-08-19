@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { THEME } from "../theme";
-import defaultStyles from "../styles";
+// import defaultStyles from "../styles";
 
 export function AppTextInput({ icon, width = "100%", ...otherProps }) {
   return (
@@ -17,7 +17,7 @@ export function AppTextInput({ icon, width = "100%", ...otherProps }) {
       )}
       <TextInput
         placeholderTextColor={THEME.GREY}
-        style={defaultStyles.myText}
+        style={THEME.title}
         {...otherProps}
       />
     </View>

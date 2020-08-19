@@ -14,6 +14,11 @@ export const THEME = {
 
   //OTHER
 
+  title: {
+    fontSize: 18,
+    color: "#0c0c0c",
+  },
+
   DEVICE_WINDOW_HEIGHT: Dimensions.get("window").height,
   DEVICE_SCREEN_HEIGHT: Dimensions.get("screen").height,
   DEVICE_WINDOW_WIDTH: Dimensions.get("window").width,
