@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LoginScreen } from "./app/screens/LoginScreen";
-import { ListingEditScreen } from "./app/screens/ListingEditScreen";
+import { MessageScreen } from "./app/screens/MessageScreen";
 
 export default function App() {
-  return <ListingEditScreen />;
+  return <MessageScreen />;
 }
