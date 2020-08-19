@@ -1,8 +1,14 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
 import * as Yup from "yup";
-import { AppForm, AppFormField, AppFormPicker, SubmitButton } from "../components/forms";
+import {
+  AppForm,
+  AppFormField,
+  AppFormPicker,
+  SubmitButton,
+} from "../components/forms";
 import { Screen } from "../components/Screen";
+import { CategoryPickerItem } from "../components/CategoryPickerItem";
 
 const validationScheme = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -24,14 +30,51 @@ const categories = [
     label: "Camera",
     value: 3,
   },
+  {
+    label: "Games",
+    value: 4,
+  },
+  {
+    label: "Movies & Music",
+    value: 5,
+  },
+  {
+    label: "Books",
+    value: 6,
+  },
+  {
+    label: "Cars",
+    value: 7,
+  },
+  {
+    label: "Sports",
+    value: 8,
+  },
+  {
+    label: "Other",
+    value: 9,
+  },
 ];
 
 export function ListingEditScreen() {
   const fields = (
     <>
       <AppFormField maxLength={255} name="title" placeholder="Title" />
-      <AppFormField keyboardType="numeric" maxLength={8} name="price" placeholder="Price" />
-      <AppFormPicker items={categories} name="category" placeholder="Category" />
+      <AppFormField
+        keyboardType="numeric"
+        maxLength={8}
+        name="price"
+        placeholder="Price"
+        width={120}
+      />
+      <AppFormPicker
+        items={categories}
+        name="category"
+        numberOfColumns={3}
+        PickerItemComponent={CategoryPickerItem}
+        placeholder="Category"
+        width="50%"
+      />
       <AppFormField
         maxLength={255}
         multiline

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TouchableWithoutFeedback, Modal, Button, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableWithoutFeedback,
+  Modal,
+  Button,
+  FlatList,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { THEME } from "../theme";
 import defaultStyles from "../styles";
@@ -7,7 +14,16 @@ import { AppText } from "./AppText";
 import { Screen } from "./Screen";
 import { PickerItem } from "./PickerItem";
 
-export function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
+export function AppPicker({
+  icon,
+  items,
+  numberOfColumns = 1,
+  onSelectItem,
+  PickerItemComponent = PickerItem,
+  placeholder,
+  selectedItem,
+  width = "100%",
+}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleModalVisible = () => {
@@ -17,9 +33,14 @@ export function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem
   return (
     <>
       <TouchableWithoutFeedback onPress={handleModalVisible}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
-            <MaterialCommunityIcons name={icon} size={20} color={THEME.GREY} style={styles.icon} />
+            <MaterialCommunityIcons
+              name={icon}
+              size={20}
+              color={THEME.GREY}
+              style={styles.icon}
+            />
           )}
 
           {selectedItem ? (
@@ -28,7 +49,11 @@ export function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem
             <AppText style={styles.placeholder}>{placeholder}</AppText>
           )}
 
-          <MaterialCommunityIcons name="chevron-down" size={20} color={THEME.GREY} />
+          <MaterialCommunityIcons
+            name="chevron-down"
+            size={20}
+            color={THEME.GREY}
+          />
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
@@ -37,8 +62,10 @@ export function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem
           <FlatList
             data={items}
             keyExtractor={(item) => `${item.value}`}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
+                item={item}
                 label={item.label}
                 onPress={() => {
                   handleModalVisible();
@@ -58,7 +85,6 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.LIGHT_GREY,
     borderRadius: 25,
     flexDirection: "row",
-    width: "100%",
     padding: 15,
     marginVertical: 10,
   },

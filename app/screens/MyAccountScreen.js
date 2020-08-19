@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 import { Screen } from "../components/Screen";
-import { ListItem } from "../components/ListItem";
+import { ListItem } from "../components/list/ListItem";
 import { Icon } from "../components/Icon";
 import { THEME } from "./../theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { ListItemSeparator } from "../components/ListItemSeparator";
+import { ListItemSeparator } from "../components/list/ListItemSeparator";
 
 const menuItems = [
   {

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableHighlight } from "react-native";
-import { AppText } from "./AppText";
-import { THEME } from "../theme";
+import { AppText } from "../AppText";
+import { THEME } from "../../theme";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
