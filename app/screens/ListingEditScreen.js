@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import * as Yup from 'yup';
+
 import {
   AppForm,
   AppFormField,
@@ -10,6 +11,7 @@ import {
 import { Screen } from '../components/Screen';
 import { CategoryPickerItem } from '../components/CategoryPickerItem';
 import { FormImagePicker } from '../components/forms/FormImagePicker';
+import { useLocation } from '../components/hooks/useLocation';
 
 const validationScheme = Yup.object().shape({
   title: Yup.string().required().min(1).label('Title'),
@@ -59,9 +61,10 @@ const categories = [
 ];
 
 export function ListingEditScreen() {
+  const location = useLocation();
   const fields = (
     <>
-      <FormImagePicker name="images"  />
+      <FormImagePicker name="images" />
       <AppFormField maxLength={255} name="title" placeholder="Title" />
       <AppFormField
         keyboardType="numeric"
@@ -74,7 +77,7 @@ export function ListingEditScreen() {
         items={categories}
         name="category"
         numberOfColumns={3}
-        PickerItemComponent={CategoryPickerItem}
+        // PickerItemComponent={CategoryPickerItem}
         placeholder="Category"
         width="50%"
       />
@@ -99,7 +102,7 @@ export function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(location)}
         validationSchema={validationScheme}
         childrem={fields}
       />
