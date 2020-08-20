@@ -1,57 +1,57 @@
-import React from "react";
-import { StyleSheet, Text } from "react-native";
-import * as Yup from "yup";
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
+import * as Yup from 'yup';
 import {
   AppForm,
   AppFormField,
   AppFormPicker,
   SubmitButton,
-} from "../components/forms";
-import { Screen } from "../components/Screen";
-import { CategoryPickerItem } from "../components/CategoryPickerItem";
+} from '../components/forms';
+import { Screen } from '../components/Screen';
+import { CategoryPickerItem } from '../components/CategoryPickerItem';
 
 const validationScheme = Yup.object().shape({
-  title: Yup.string().required().min(1).label("Title"),
-  price: Yup.number().required().min(1).max(10000).label("Price"),
-  description: Yup.string().label("Description"),
-  category: Yup.object().required().nullable().label("Category"),
+  title: Yup.string().required().min(1).label('Title'),
+  price: Yup.number().required().min(1).max(10000).label('Price'),
+  description: Yup.string().label('Description'),
+  category: Yup.object().required().nullable().label('Category'),
 });
 
 const categories = [
   {
-    label: "Furniture",
+    label: 'Furniture',
     value: 1,
   },
   {
-    label: "Clothing",
+    label: 'Clothing',
     value: 2,
   },
   {
-    label: "Camera",
+    label: 'Camera',
     value: 3,
   },
   {
-    label: "Games",
+    label: 'Games',
     value: 4,
   },
   {
-    label: "Movies & Music",
+    label: 'Movies & Music',
     value: 5,
   },
   {
-    label: "Books",
+    label: 'Books',
     value: 6,
   },
   {
-    label: "Cars",
+    label: 'Cars',
     value: 7,
   },
   {
-    label: "Sports",
+    label: 'Sports',
     value: 8,
   },
   {
-    label: "Other",
+    label: 'Other',
     value: 9,
   },
 ];
@@ -90,9 +90,9 @@ export function ListingEditScreen() {
     <Screen>
       <AppForm
         initialValues={{
-          title: "",
-          price: "",
-          description: "",
+          title: '',
+          price: '',
+          description: '',
           category: null,
         }}
         onSubmit={(values) => console.log(values)}
