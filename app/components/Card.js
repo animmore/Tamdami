@@ -7,13 +7,13 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 export function Card({
   title,
   subTitle,
-  image = require('../assets/jacket.jpg'),
+  imageUrl = require('../assets/jacket.jpg'),
   onPress,
 }) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.cardContainer}>
-        <Image source={image} style={{ ...styles.imageCard }} />
+        <Image source={{ uri: imageUrl }} style={{ ...styles.imageCard }} />
         <View style={styles.infoContainter}>
           <AppText style={styles.title}>{title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>
